@@ -1,12 +1,13 @@
 import React from 'react';
+import Main from './components/Main';
 
 function App() {
   return (
-    <div className='App'>
+    <Main>
       <header className='App-header'>
         <h1>Hello BossaBox</h1>
       </header>
-    </div>
+    </Main>
   );
 }
 
