@@ -11,20 +11,28 @@ html {
   width: 100vw;
   height: 100vh;
   font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+
 
   
 }
 
 body{
-  width: 100vw;
-  height: 100vh;
+  width: 90%;
+  max-width:1728px;
+  height: 90%;
+  max-height: 972px;
   display:flex;
   
   align-items:center;
   justify-content: center;
   
   background: #6554C0 0% 0% no-repeat padding-box;
-  color:#FCFCFD
+  color:#FCFCFD;
+  
+  
 
 }
 h1, h2, h3, h4, h5, h6{
