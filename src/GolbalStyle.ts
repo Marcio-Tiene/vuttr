@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
 const Globalstyle = createGlobalStyle`
+
+--DarkestWhite: #EBEAED;
+--DarkerWhite: #F5F4F6;
+--Yellow: #FFBB43;
+
+
 *{
     
   margin: 0;
@@ -8,36 +14,35 @@ const Globalstyle = createGlobalStyle`
   box-sizing: border-box;
 }
 html {
-  width: 100vw;
-  height: 100vh;
+  
   font-family: 'Source Sans Pro', sans-serif;
-  display: flex;
-  align-items:center;
-  justify-content: center;
+  
 
 
   
 }
 
 body{
-  width: 90%;
-  max-width:1728px;
-  height: 90%;
-  max-height: 972px;
-  display:flex;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+align-items: center;
+justify-content: center;
   
-  align-items:center;
-  justify-content: center;
+  background-color:#6554C0;
   
-  background: #6554C0 0% 0% no-repeat padding-box;
-  color:#FCFCFD;
+ 
+  
   
   
 
 }
 h1, h2, h3, h4, h5, h6{
-  font: normal normal 600 26px/32px Source Sans Pro;
-  text-shadow:0.25rem 0.40rem 0.40rem #170C3A ;
+  font-weight: 600;
+  color: #FFBB43;
+  
+  
 }
 `;
 
