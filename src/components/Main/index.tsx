@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const Main = styled.main`
-  width: 90vw;
+  width: 50vw;
   max-width: 1728px;
-  height: 90vh;
+  height: 80vh;
   max-height: 972px;
   display: flex;
   flex-direction: column;
