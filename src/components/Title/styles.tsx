@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const LogoImg = styled.img`
-  height: 3rem;
+  height: 4rem;
 `;
 
 export const Subtitle = styled.h2`
