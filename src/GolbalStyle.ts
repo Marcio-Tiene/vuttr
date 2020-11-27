@@ -2,10 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const Globalstyle = createGlobalStyle`
 
---DarkestWhite: #EBEAED;
---DarkerWhite: #F5F4F6;
---Ink: #170C3A;
---MosDarkestWhite: #DEDCE1;
+
 
 *{
     
@@ -14,6 +11,11 @@ const Globalstyle = createGlobalStyle`
   box-sizing: border-box;
 }
 html {
+
+--DarkestWhite: #EBEAED;
+--DarkerWhite: #F5F4F6;
+--Ink: #170C3A;
+--MostDarkestWhite: #DEDCE1;
   
   font-family: 'Source Sans Pro', sans-serif;  
 }
@@ -26,7 +28,7 @@ body{
 align-items: center;
 justify-content: center;
   
-  background-color: var(--DarkerWhite);
+  background-color: white;
 }
 
 h1, h2, h3, h4, h5, h6{

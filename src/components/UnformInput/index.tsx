@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import { useField } from '@unform/core';
 
 interface Props {
-  name: string;
   label?: string;
+  name: string;
+  search: string;
 }
 type InputProps = JSX.IntrinsicElements['input'] & Props;
 const UnformInput: React.FC<InputProps> = ({ name, label, ...rest }) => {
