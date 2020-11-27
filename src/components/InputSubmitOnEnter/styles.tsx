@@ -7,7 +7,7 @@ export const InputWrapper = styled.div`
 
 export const IconContainer = styled.div`
   position: absolute;
-  top: 0.125rem;
+  top: 0.15rem;
   left: 1.125rem;
   opacity: 0.3;
 `;
