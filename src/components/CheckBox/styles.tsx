@@ -4,7 +4,9 @@ export const CheckboxLabel = styled.label`
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -25,7 +27,7 @@ export const CheckboxLabel = styled.label`
   & .checkmark {
     border-radius: 2px;
     position: absolute;
-    top: 8px;
+    top: 7px;
     left: 16px;
     height: 15px;
     width: 15px;
@@ -57,7 +59,7 @@ export const CheckboxLabel = styled.label`
   /* Style the checkmark/indicator */
   & .checkmark:after {
     left: 5px;
-    bottom: 3px;
+    bottom: 2px;
     width: 3px;
     height: 9px;
     border: 2px solid white;
