@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const Main = styled.main`
-  width: 50vw;
-  max-width: 1728px;
-  height: 80vh;
-  max-height: 972px;
+  width: 95vw;
+  max-width: 900px;
+  height: 90vh;
+  margin-top: 10vh;
+
   display: flex;
   flex-direction: column;
 `;

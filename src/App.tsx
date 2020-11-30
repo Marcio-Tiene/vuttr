@@ -3,6 +3,7 @@ import Main from './components/Main';
 import Title from './components/Title';
 
 import ToolBar from './components/ToolBar';
+import ToolList from './components/ToolList';
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
       <Title />
 
       <ToolBar />
+
+      <ToolList />
     </Main>
   );
 }

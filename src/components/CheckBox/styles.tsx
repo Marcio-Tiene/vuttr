@@ -27,8 +27,8 @@ export const CheckboxLabel = styled.label`
   & .checkmark {
     border-radius: 2px;
     position: absolute;
-    top: 7px;
-    left: 16px;
+    top: 5px;
+    left: 10px;
     height: 15px;
     width: 15px;
     background: var(--DarkerWhite) 0% 0% no-repeat padding-box;
