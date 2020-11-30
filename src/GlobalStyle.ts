@@ -2,14 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 const Globalstyle = createGlobalStyle`
 
-<<<<<<< HEAD:src/GlobalStyle.ts
-
-=======
---DarkestWhite: #EBEAED;
---DarkerWhite: #F5F4F6;
---Ink: #170C3A;
---MosDarkestWhite: #DEDCE1;
->>>>>>> 6006d832ae6448af34107146df426f47c5fef005:src/GolbalStyle.ts
 
 *{
     
@@ -18,14 +10,11 @@ const Globalstyle = createGlobalStyle`
   box-sizing: border-box;
 }
 html {
-<<<<<<< HEAD:src/GlobalStyle.ts
 
 --DarkestWhite: #EBEAED;
 --DarkerWhite: #F5F4F6;
 --Ink: #170C3A;
 --MostDarkestWhite: #DEDCE1;
-=======
->>>>>>> 6006d832ae6448af34107146df426f47c5fef005:src/GolbalStyle.ts
   
   font-family: 'Source Sans Pro', sans-serif;  
 }
@@ -38,16 +27,16 @@ body{
 align-items: center;
 justify-content: center;
   
-<<<<<<< HEAD:src/GlobalStyle.ts
   background-color: white;
-=======
-  background-color: var(--DarkerWhite);
->>>>>>> 6006d832ae6448af34107146df426f47c5fef005:src/GolbalStyle.ts
 }
 
 h1, h2, h3, h4, h5, h6{
   font-weight: 600;
   color: #170C3A; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
 }
 
 h1 {
@@ -73,6 +62,9 @@ h5{
 p {
   font-weight: normal;
   font-size:1.25rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 `;
 

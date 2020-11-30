@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { SetToolListContext } from '../../context/ToolListContext';
+import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
 import { ITools } from '../../interfaces/ITools';
 import GetTools from '../../services/GetTools';
 import CheckBox from '../CheckBox';
@@ -10,9 +10,13 @@ import { SearchContainer } from './styles';
 const SearchField: React.FC = () => {
   const [searchText, setSearchText] = useState('');
   const [isChecked, setIsChecked] = useState(false);
-  const setTools = useContext(SetToolListContext) as React.Dispatch<
-    React.SetStateAction<ITools[]>
-  >;
+  const checkeBoxOnChange = () =>
+    isChecked ? setIsChecked(false) : setIsChecked(true);
+
+  const inputOnChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+    setSearchText(event.target.value);
+
+  const { setToolList } = ToolListGlobalState();
 
   const { SearchTools, SearchToolsbyTags } = new GetTools();
 
@@ -24,10 +28,10 @@ const SearchField: React.FC = () => {
       event.stopPropagation();
       if (isChecked) {
         const response = (await SearchToolsbyTags(searchText)) as ITools[];
-        setTools(response);
+        setToolList(response);
       } else {
         const response = (await SearchTools(searchText)) as ITools[];
-        setTools(response);
+        setToolList(response);
       }
     }
   };
@@ -35,17 +39,12 @@ const SearchField: React.FC = () => {
     <SearchContainer>
       <InputSubmitOnEnter
         value={searchText}
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-          setSearchText(event.target.value)
-        }
+        onChange={inputOnChange}
         onKeyDown={onEnterPress}
         icon={<AiOutlineSearch size={20} color='var(--Ink)' />}
         PlaceHolder='Search'
       />
-      <CheckBox
-        checked={isChecked}
-        onChange={() => (isChecked ? setIsChecked(false) : setIsChecked(true))}
-      >
+      <CheckBox checked={isChecked} onChange={checkeBoxOnChange}>
         search in tags only
       </CheckBox>
     </SearchContainer>

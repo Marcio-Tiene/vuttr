@@ -12,7 +12,7 @@ const SetToolListContext = createContext<null | React.Dispatch<
 
 const ToolListProvider: React.FC = ({ children }) => {
   const [toolList, setToolList] = useState<ITools[]>([
-    { title: 'loading' },
+    { title: 'loading', tags: [''] },
   ] as ITools[]);
   const { LoadAllTools } = new GetTools();
 
