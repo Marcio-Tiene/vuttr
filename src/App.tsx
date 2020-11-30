@@ -1,4 +1,5 @@
 import React from 'react';
+import AddToolFormModal from './components/AddToolFormModal';
 import Main from './components/Main';
 import Title from './components/Title';
 
@@ -13,6 +14,7 @@ function App() {
       <ToolBar />
 
       <ToolList />
+      {/* <AddToolFormModal open={true}></AddToolFormModal>S */}
     </Main>
   );
 }
