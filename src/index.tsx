@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Globalstyle from './GolbalStyle';
+import Globalstyle from './GlobalStyle';
+import { ToolListProvider } from './context/ToolListContext';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-    <Globalstyle />
-  </React.StrictMode>,
+  <ToolListProvider>
+    <React.StrictMode>
+      <App />
+      <Globalstyle />
+    </React.StrictMode>
+  </ToolListProvider>,
+
   document.getElementById('root')
 );
 
