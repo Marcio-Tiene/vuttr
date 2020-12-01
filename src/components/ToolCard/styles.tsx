@@ -28,6 +28,7 @@ export const ToolTitle = styled.a`
 export const RemoveButton = styled.a`
   display: flex;
   align-items: center;
+  cursor: pointer;
   h4 {
     padding-left: 0.2ch;
   }

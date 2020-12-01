@@ -18,8 +18,6 @@ export const ModalBackground = styled.dialog`
   top: 0;
   left: 0;
 
-  transition: opacity 0.3s;
-
   ${(p: IModal) =>
     p.show &&
     css`
@@ -40,10 +38,14 @@ export const AddFormArticle = styled.article`
   max-width: 600px;
   height: 95vh;
   max-height: 700px;
-  margin: 2.5vh 0;
+  margin: 10% 0;
 
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 20px 25px #0000001a;
+
+  @media (max-height: 1024px) {
+    margin: 5px;
+  }
 `;
 
 export const AddFormHeader = styled.header`

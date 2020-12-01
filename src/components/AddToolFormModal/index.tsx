@@ -3,10 +3,11 @@ import { AddFormArticle, AddFormHeader, ModalBackground } from './styles';
 
 import { HiOutlinePlus } from 'react-icons/hi';
 import { CgClose } from 'react-icons/cg';
+import AddToolForm from '../AddToolForm';
 
 interface IAddToolFormModal {
   open?: boolean;
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 const AddToolFormModal: React.FC<IAddToolFormModal> = ({ open, onClick }) => {
@@ -22,6 +23,7 @@ const AddToolFormModal: React.FC<IAddToolFormModal> = ({ open, onClick }) => {
           </h2>
           <CgClose size={25} onClick={onClick} style={{ cursor: 'pointer' }} />
         </AddFormHeader>
+        <AddToolForm onSubmited={onClick} />
       </AddFormArticle>
     </ModalBackground>
   );
