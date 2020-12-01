@@ -3,23 +3,21 @@ import { GoPlus } from 'react-icons/go';
 import AddToolFormModal from '../AddToolFormModal';
 import { Button } from '../Button';
 import SearchField from '../SearchField';
-import { ToolBarContainer } from './styles';
+import { SearchFieldAnAddButtonContainer } from './styles';
 
-const ToolBar = () => {
+const SearchFieldAnAddButton = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <ToolBarContainer>
+    <SearchFieldAnAddButtonContainer>
       <SearchField />
       <Button onClick={() => setIsOpen(!isOpen)}>
         <GoPlus />
         add
       </Button>
-      <AddToolFormModal open={isOpen}>
-        <Button onClick={() => setIsOpen(!isOpen)}> dasdasdasdsa</Button>
-      </AddToolFormModal>
-    </ToolBarContainer>
+      <AddToolFormModal open={isOpen} onClick={() => setIsOpen(!isOpen)} />
+    </SearchFieldAnAddButtonContainer>
   );
 };
 
-export default ToolBar;
+export default SearchFieldAnAddButton;

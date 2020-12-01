@@ -19,7 +19,7 @@ const ToolCard: React.FC<ITools> = ({ title, link, description, tags, id }) => {
           <h2>{title}</h2>
         </ToolTitle>
         <RemoveButton>
-          <CgClose />
+          <CgClose color='var(--Ink)' />
           <h4>remove</h4>
         </RemoveButton>
       </ToolHeader>
