@@ -4,6 +4,8 @@ import { ErrorMsg, Form, SubmitButton } from './styles';
 import Input from '../UnformInput';
 import TextArea from '../UnformTextArea';
 import * as Yup from 'yup';
+import ToolsRepository from '../../services/ToolsRepository';
+import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
 
 interface FormData {
   title: string;
@@ -17,6 +19,8 @@ interface MyProps {
 }
 
 const AddToolForm: React.FC<MyProps> = ({ onSubmited }) => {
+  const { LoadAllTools, PostTool } = new ToolsRepository();
+  const { setToolList } = ToolListGlobalState();
   const [hasTitleError, setHasTitleError] = useState(false);
   const [hasLinkError, setHasLinkError] = useState(false);
   const [hasDescriptionError, setHasDescriptionError] = useState(false);
@@ -30,10 +34,11 @@ const AddToolForm: React.FC<MyProps> = ({ onSubmited }) => {
         .split(' ')
         .filter((tag) => tag !== '' && tag);
 
-      const formatedData = () => {
-        return { ...data, tags: tagsWithoutEmptyStrings };
-      };
-      console.log(formatedData());
+      const formatedData = { ...data, tags: tagsWithoutEmptyStrings };
+
+      await PostTool(formatedData);
+      setToolList(await LoadAllTools());
+
       reset();
       onSubmited();
     } catch (err) {

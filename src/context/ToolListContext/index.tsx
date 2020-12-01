@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { toolsErrorReference } from '../../config/References';
 import { ITools } from '../../interfaces/ITools';
-import GetTools from '../../services/GetTools';
+import GetTools from '../../services/ToolsRepository';
 
 const ToolListContext = createContext({
   toolList: [toolsErrorReference],
