@@ -13,7 +13,6 @@ function App() {
       <SearchFieldAnAddButton />
 
       <ToolList />
-      {/* <AddToolFormModal open={true}></AddToolFormModal>S */}
     </Main>
   );
 }
