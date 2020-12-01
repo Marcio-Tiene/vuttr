@@ -5,9 +5,15 @@ import { InputContainer } from './styles';
 interface Props {
   label?: string;
   name: string;
+  hasError?: boolean;
 }
 type InputProps = JSX.IntrinsicElements['input'] & Props;
-const UnformInput: React.FC<InputProps> = ({ name, label, ...rest }) => {
+const UnformInput: React.FC<InputProps> = ({
+  name,
+  label,
+  hasError,
+  ...rest
+}) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { fieldName, defaultValue, registerField, error } = useField(name);
   useEffect(() => {
@@ -18,7 +24,7 @@ const UnformInput: React.FC<InputProps> = ({ name, label, ...rest }) => {
     });
   }, [fieldName, registerField]);
   return (
-    <InputContainer>
+    <InputContainer hasError={hasError}>
       {label && <label htmlFor={fieldName}>{label}</label>}
       <input
         id={fieldName}

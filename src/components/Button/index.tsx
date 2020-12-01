@@ -16,6 +16,7 @@ export const Button = styled.button`
   font: normal normal 600 18px/24px Source Sans Pro;
   letter-spacing: 0.36px;
   color: #ffffff;
+  transition: linear 0.2s;
 
   :hover {
     background: #2f55cc 0% 0% no-repeat padding-box;

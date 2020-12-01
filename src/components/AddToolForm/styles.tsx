@@ -2,6 +2,10 @@ import { Form as Unform } from '@unform/web';
 import styled from 'styled-components';
 import { Button } from '../Button';
 
+interface MyInputProps {
+  hasError?: boolean;
+}
+
 export const Form = styled(Unform)`
   display: flex;
   padding-left: 5%;
@@ -16,15 +20,15 @@ export const Form = styled(Unform)`
     letter-spacing: 0.4px;
     color: var(--Ink);
     padding-bottom: 21px;
+    span {
+      color: var(--Ink);
+    }
   }
   input {
-    background: #f5f4f6 0% 0% no-repeat padding-box;
-    border: 1px solid #dedce1;
-    border-radius: 5px;
     font: normal normal normal 20px/26px Source Sans Pro;
     letter-spacing: 0.4px;
     text-indent: 1ch;
-    color: var(--Ink);
+
     transition: linear 0.2s;
     outline: none;
 
@@ -61,4 +65,11 @@ export const SubmitButton = styled(Button)`
   @media (max-height: 1024px) {
     margin-top: 6vh;
   }
+`;
+
+export const ErrorMsg = styled.p`
+  font-size: 0.85rem;
+  color: red;
+  align-self: flex-end;
+  visibility: ${(p: MyInputProps) => (p.hasError ? 'visible' : 'hidden')};
 `;
