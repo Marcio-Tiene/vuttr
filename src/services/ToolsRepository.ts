@@ -2,8 +2,6 @@ import { toolsErrorReference } from '../config/References';
 import api from './api';
 
 export default class ToolsRepository {
-  allTools = this.LoadAllTools();
-
   async LoadAllTools() {
     try {
       const response = (await api.get('/tools')).data;

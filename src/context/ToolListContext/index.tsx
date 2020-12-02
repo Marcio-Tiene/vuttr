@@ -1,10 +1,9 @@
-import React, { createContext, useEffect, useState } from 'react';
-import { toolsErrorReference } from '../../config/References';
+import React, { createContext, useState } from 'react';
+import { loadingToolsReference } from '../../config/References';
 import { ITools } from '../../interfaces/ITools';
-import GetTools from '../../services/ToolsRepository';
 
 const ToolListContext = createContext({
-  toolList: [toolsErrorReference],
+  toolList: [loadingToolsReference],
 });
 const SetToolListContext = createContext<null | React.Dispatch<
   React.SetStateAction<ITools[]>
@@ -14,14 +13,6 @@ const ToolListProvider: React.FC = ({ children }) => {
   const [toolList, setToolList] = useState<ITools[]>([
     { title: 'loading', tags: [''] },
   ] as ITools[]);
-  const { LoadAllTools } = new GetTools();
-
-  useEffect(() => {
-    (async () => {
-      const response = (await LoadAllTools()) as ITools[];
-      setToolList(response);
-    })();
-  }, [LoadAllTools]);
 
   return (
     <ToolListContext.Provider value={{ toolList }}>

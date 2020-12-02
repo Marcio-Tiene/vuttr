@@ -23,6 +23,10 @@ export const Form = styled(Unform)`
     span {
       color: var(--Ink);
     }
+
+    @media (max-height: 900px) {
+      padding-bottom: 5px;
+    }
   }
   input {
     font: normal normal normal 20px/26px Source Sans Pro;
@@ -58,12 +62,13 @@ export const Form = styled(Unform)`
 `;
 
 export const SubmitButton = styled(Button)`
-  margin-top: 15%;
+  margin-top: 10%;
   justify-self: flex-end;
   align-self: flex-end;
 
-  @media (max-height: 1024px) {
-    margin-top: 6vh;
+  @media (max-height: 900px) {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 `;
 
