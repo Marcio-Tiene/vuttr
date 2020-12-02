@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
 import { ITools } from '../../interfaces/ITools';
-import GetTools from '../../services/GetTools';
+import GetTools from '../../services/ToolsRepository';
 import CheckBox from '../CheckBox';
 import InputSubmitOnEnter from '../InputSubmitOnEnter';
 import { SearchContainer } from './styles';

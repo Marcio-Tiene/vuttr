@@ -1,20 +1,20 @@
 import React, { useEffect, useRef } from 'react';
 import { useField } from '@unform/core';
-import { InputContainer } from './styles';
+import { TextAreaContainer } from './styles';
 
 interface Props {
   label?: string;
   name: string;
   hasError?: boolean;
 }
-type InputProps = JSX.IntrinsicElements['input'] & Props;
-const UnformInput: React.FC<InputProps> = ({
+type TextAreaProps = JSX.IntrinsicElements['textarea'] & Props;
+const UnformTextArea: React.FC<TextAreaProps> = ({
   name,
   label,
   hasError,
   ...rest
 }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   const { fieldName, defaultValue, registerField, error } = useField(name);
   useEffect(() => {
     registerField({
@@ -24,16 +24,16 @@ const UnformInput: React.FC<InputProps> = ({
     });
   }, [fieldName, registerField]);
   return (
-    <InputContainer hasError={hasError}>
+    <TextAreaContainer hasError={hasError}>
       {label && <label htmlFor={fieldName}>{label}</label>}
-      <input
+      <textarea
         id={fieldName}
         ref={inputRef}
         defaultValue={defaultValue}
         {...rest}
       />
       {error && <span>{error}</span>}
-    </InputContainer>
+    </TextAreaContainer>
   );
 };
-export default UnformInput;
+export default UnformTextArea;

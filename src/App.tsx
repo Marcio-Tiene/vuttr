@@ -2,15 +2,15 @@ import React from 'react';
 import Main from './components/Main';
 import Title from './components/Title';
 
-import ToolBar from './components/ToolBar';
 import ToolList from './components/ToolList';
+import SearchFieldAnAddButton from './components/SearchFieldAnAddButton';
 
 function App() {
   return (
     <Main>
       <Title />
 
-      <ToolBar />
+      <SearchFieldAnAddButton />
 
       <ToolList />
     </Main>
