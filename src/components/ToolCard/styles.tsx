@@ -6,7 +6,7 @@ export const ToolArticle = styled.article`
   justify-content: space-between;
 
   background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 10px 10px #0000000d;
+  box-shadow: 0px 5px 7px #0000000d;
   border: 1px solid #ebeaed;
   border-radius: 5px;
   transition: linear 0.2s;
@@ -28,6 +28,7 @@ export const ToolTitle = styled.a`
 export const RemoveButton = styled.a`
   display: flex;
   align-items: center;
+  cursor: pointer;
   h4 {
     padding-left: 0.2ch;
   }

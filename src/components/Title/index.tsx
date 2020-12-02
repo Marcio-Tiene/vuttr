@@ -7,7 +7,7 @@ const Title: React.FC = () => {
   return (
     <Header>
       <LogoImg src={Logo} alt='' />
-      <Subtitle>Very Useful Things To Remember</Subtitle>
+      <Subtitle>Very Useful Tools To Remember</Subtitle>
     </Header>
   );
 };

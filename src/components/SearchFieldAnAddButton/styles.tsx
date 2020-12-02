@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ToolBarContainer = styled.div`
+export const SearchFieldAnAddButtonContainer = styled.div`
   height: fit-content;
   width: 100%;
   max-width: 95vw;

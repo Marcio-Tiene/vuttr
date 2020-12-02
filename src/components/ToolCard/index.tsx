@@ -11,15 +11,26 @@ import {
   ToolTitle,
 } from './styles';
 
-const ToolCard: React.FC<ITools> = ({ title, link, description, tags, id }) => {
+interface IToolCard extends ITools {
+  removeButtonOnClick?: () => void;
+}
+
+const ToolCard: React.FC<IToolCard> = ({
+  title,
+  link,
+  description,
+  tags,
+  id,
+  removeButtonOnClick,
+}) => {
   return (
     <ToolArticle key={id}>
       <ToolHeader>
         <ToolTitle href={link} target='_blank'>
           <h2>{title}</h2>
         </ToolTitle>
-        <RemoveButton>
-          <CgClose />
+        <RemoveButton onClick={removeButtonOnClick}>
+          <CgClose color='var(--Ink)' />
           <h4>remove</h4>
         </RemoveButton>
       </ToolHeader>

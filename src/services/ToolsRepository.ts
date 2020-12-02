@@ -1,9 +1,7 @@
 import { toolsErrorReference } from '../config/References';
 import api from './api';
 
-export default class GetTools {
-  allTools = this.LoadAllTools();
-
+export default class ToolsRepository {
   async LoadAllTools() {
     try {
       const response = (await api.get('/tools')).data;
@@ -27,6 +25,14 @@ export default class GetTools {
       const response = (await api.get(`/tools?tags_like=${tag}`)).data;
 
       return response;
+    } catch {
+      return [toolsErrorReference];
+    }
+  }
+
+  async PostTool(data: {}) {
+    try {
+      await api.post('/tools', data).then((response) => console.log(response));
     } catch {
       return [toolsErrorReference];
     }

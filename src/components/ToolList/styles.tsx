@@ -7,7 +7,7 @@ export const ToolListContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 10px;
+  gap: 20px;
 
   overflow-y: scroll;
   overflow-x: hidden;
