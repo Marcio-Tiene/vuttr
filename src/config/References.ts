@@ -1,4 +1,4 @@
-import { ITools } from '../interfaces/ITools';
+import { IHasFormError, ITools } from '../interfaces/ITools';
 
 export const toolsErrorReference: ITools = {
   id: -1,
@@ -14,4 +14,10 @@ export const loadingToolsReference: ITools = {
   description: '',
   link: '',
   id: -1,
+};
+export const hasFormErrorInitialValue: IHasFormError = {
+  hasTitleError: false,
+  haslinkError: false,
+  hasDescriptionError: false,
+  hasTagsError: false,
 };

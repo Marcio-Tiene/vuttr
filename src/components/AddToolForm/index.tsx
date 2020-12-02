@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { SubmitHandler, FormHandles } from '@unform/core';
 import { ErrorMsg, Form, SubmitButton } from './styles';
 import Input from '../UnformInput';
@@ -20,11 +20,7 @@ interface MyProps {
 
 const AddToolForm: React.FC<MyProps> = ({ onSubmited }) => {
   const { LoadAllTools, PostTool } = new ToolsRepository();
-  const { setToolList } = ToolListGlobalState();
-  const [hasTitleError, setHasTitleError] = useState(false);
-  const [hasLinkError, setHasLinkError] = useState(false);
-  const [hasDescriptionError, setHasDescriptionError] = useState(false);
-  const [hasTagsError, setHasTagsError] = useState(false);
+  const { setToolList, hasFormError, setHasFormError } = ToolListGlobalState();
 
   const formRef = useRef<FormHandles>(null);
   const handleSubmit: SubmitHandler<FormData> = async (data, { reset }) => {
@@ -48,16 +44,22 @@ const AddToolForm: React.FC<MyProps> = ({ onSubmited }) => {
 
   const inputErrorHandler = (errors: string[]) => {
     if (errors.includes('title is a required field')) {
-      setHasTitleError(true);
+      setHasFormError((prevState) => ({ ...prevState, hasTitleError: true }));
     }
+
     if (errors.includes('link is a required field')) {
-      setHasLinkError(true);
+      setHasFormError((prevState) => ({ ...prevState, haslinkError: true }));
     }
+
     if (errors.includes('description is a required field')) {
-      setHasDescriptionError(true);
+      setHasFormError((prevState) => ({
+        ...prevState,
+        hasDescriptionError: true,
+      }));
     }
+
     if (errors.includes('tags is a required field')) {
-      setHasTagsError(true);
+      setHasFormError((prevState) => ({ ...prevState, hasTagsError: true }));
     }
   };
   return (
@@ -65,36 +67,48 @@ const AddToolForm: React.FC<MyProps> = ({ onSubmited }) => {
       <Input
         name='title'
         label='Tool Name'
-        onClick={() => setHasTitleError(false)}
-        hasError={hasTitleError}
+        onClick={() =>
+          setHasFormError({ ...hasFormError, hasTitleError: false })
+        }
+        hasError={hasFormError.hasTitleError}
       />
-      <ErrorMsg hasError={hasTitleError}>the tool needs a title</ErrorMsg>
+      <ErrorMsg hasError={hasFormError.hasTitleError}>
+        the tool needs a title
+      </ErrorMsg>
 
       <Input
         name='link'
         label='Tool Link'
-        onClick={() => setHasLinkError(false)}
-        hasError={hasLinkError}
+        onClick={() =>
+          setHasFormError({ ...hasFormError, haslinkError: false })
+        }
+        hasError={hasFormError.haslinkError}
       />
-      <ErrorMsg hasError={hasLinkError}>the tool needs a link</ErrorMsg>
+      <ErrorMsg hasError={hasFormError.haslinkError}>
+        the tool needs a link
+      </ErrorMsg>
 
       <TextArea
         name='description'
         label='Tool Description'
-        onClick={() => setHasDescriptionError(false)}
-        hasError={hasDescriptionError}
+        onClick={() =>
+          setHasFormError({ ...hasFormError, hasDescriptionError: false })
+        }
+        hasError={hasFormError.hasDescriptionError}
       />
-      <ErrorMsg hasError={hasDescriptionError}>
+      <ErrorMsg hasError={hasFormError.hasDescriptionError}>
         the tool needs a description
       </ErrorMsg>
 
       <Input
         name='tags'
         label='Tags'
-        onClick={() => setHasTagsError(false)}
-        hasError={hasTagsError}
+        onClick={() =>
+          setHasFormError({ ...hasFormError, hasTagsError: false })
+        }
+        hasError={hasFormError.hasTagsError}
       />
-      <ErrorMsg hasError={hasTagsError}>
+      <ErrorMsg hasError={hasFormError.hasTagsError}>
         the tool needs at least one tag
       </ErrorMsg>
 
