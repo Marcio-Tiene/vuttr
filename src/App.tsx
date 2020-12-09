@@ -4,6 +4,8 @@ import Title from './components/Title';
 
 import ToolList from './components/ToolList';
 import SearchFieldAnAddButton from './components/SearchFieldAnAddButton';
+import NotificationBanner from './components/NotificationBanner';
+import { CgClose } from 'react-icons/cg';
 
 function App() {
   return (

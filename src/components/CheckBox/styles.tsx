@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const CheckboxLabel = styled.label`
-  display: block;
+  display: box;
   position: relative;
-  padding-left: 35px;
+  padding-left: 20px;
   font-size: 1.25rem;
   line-height: 1.625rem;
 
@@ -27,8 +27,8 @@ export const CheckboxLabel = styled.label`
   & .checkmark {
     border-radius: 2px;
     position: absolute;
-    top: 5px;
-    left: 10px;
+    top: 7px;
+    left: 0px;
     height: 15px;
     width: 15px;
     background: var(--DarkerWhite) 0% 0% no-repeat padding-box;

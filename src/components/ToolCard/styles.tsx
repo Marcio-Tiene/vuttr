@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 export const ToolArticle = styled.article`
+  padding: 1ch 0 2ch;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-right: 5px;
 
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 5px 7px #0000000d;

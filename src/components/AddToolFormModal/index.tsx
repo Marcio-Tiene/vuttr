@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AddFormArticle, AddFormHeader, ModalBackground } from './styles';
 
 import { HiOutlinePlus } from 'react-icons/hi';
 import { CgClose } from 'react-icons/cg';
 import AddToolForm from '../AddToolForm';
+import NotificationBanner from '../NotificationBanner';
 
 interface IAddToolFormModal {
   open?: boolean;
@@ -11,21 +12,43 @@ interface IAddToolFormModal {
 }
 
 const AddToolFormModal: React.FC<IAddToolFormModal> = ({ open, onClick }) => {
+  const [isAddSucces, setIsAddSucces] = useState(false);
+  const [toolSuccessAdded, setToolSuccessAdded] = useState('');
+
+  function successHandleer(toolName: string) {
+    setToolSuccessAdded(toolName);
+    setIsAddSucces(true);
+    setTimeout(() => setIsAddSucces(false), 5000);
+  }
+
   return (
-    <ModalBackground open={open} show={open}>
-      <AddFormArticle>
-        <AddFormHeader>
-          <h2>
-            <span>
-              <HiOutlinePlus size={25} />
-            </span>
-            Add new Tool
-          </h2>
-          <CgClose size={25} onClick={onClick} style={{ cursor: 'pointer' }} />
-        </AddFormHeader>
-        <AddToolForm onSubmited={onClick} />
-      </AddFormArticle>
-    </ModalBackground>
+    <>
+      <ModalBackground open={open} show={open}>
+        <AddFormArticle>
+          <AddFormHeader>
+            <h2>
+              <span>
+                <HiOutlinePlus size={25} />
+              </span>
+              Add new Tool
+            </h2>
+            <CgClose
+              size={25}
+              onClick={onClick}
+              style={{ cursor: 'pointer' }}
+            />
+          </AddFormHeader>
+          <AddToolForm onSubmited={onClick} onSuccess={successHandleer} />
+        </AddFormArticle>
+      </ModalBackground>
+      <NotificationBanner
+        closeOnClick={() => setIsAddSucces(false)}
+        isOpen={isAddSucces}
+        icon={<CgClose size={25} />}
+      >
+        The <b>{toolSuccessAdded}</b> tool was successfully added
+      </NotificationBanner>
+    </>
   );
 };
 

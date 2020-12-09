@@ -11,6 +11,7 @@ import {
 interface IRemoveTool {
   onConfirm?: () => void;
   onCancel?: () => void;
+
   isOpen: boolean;
   toolName: string;
 }
@@ -32,9 +33,11 @@ const DeleteToolModal: React.FC<IRemoveTool> = ({
           Are you sure you want to remove <b>{toolName}</b> ?
         </p>
         <ButtonContainer>
-          <DeleteToolButton onClick={onCancel}>cancel</DeleteToolButton>
+          <DeleteToolButton className='secondary-neutral' onClick={onCancel}>
+            Cancel
+          </DeleteToolButton>
           <DeleteToolButton className='danger' onClick={onConfirm}>
-            yes, remove
+            Yes, remove
           </DeleteToolButton>
         </ButtonContainer>
       </DeleteToolArticle>

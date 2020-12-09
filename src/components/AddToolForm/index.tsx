@@ -3,9 +3,10 @@ import { SubmitHandler, FormHandles } from '@unform/core';
 import { ErrorMsg, Form, SubmitButton } from './styles';
 import Input from '../UnformInput';
 import TextArea from '../UnformTextArea';
-import * as Yup from 'yup';
 import ToolsRepository from '../../services/ToolsRepository';
 import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
+import InputErrorHandler from '../../services/InputErrorHandler';
+import validationFormSchema from '../../services/validationFormSchema';
 
 interface FormData {
   title: string;
@@ -16,16 +17,17 @@ interface FormData {
 
 interface MyProps {
   onSubmited: () => void;
+  onSuccess: (props: string) => void;
 }
 
-const AddToolForm: React.FC<MyProps> = ({ onSubmited }) => {
+const AddToolForm: React.FC<MyProps> = ({ onSubmited, onSuccess }) => {
   const { LoadAllTools, PostTool } = new ToolsRepository();
   const { setToolList, hasFormError, setHasFormError } = ToolListGlobalState();
 
   const formRef = useRef<FormHandles>(null);
   const handleSubmit: SubmitHandler<FormData> = async (data, { reset }) => {
     try {
-      await schema.validate(data, { abortEarly: false });
+      await validationFormSchema.validate(data, { abortEarly: false });
       const tagsWithoutEmptyStrings = data.tags
         .split(' ')
         .filter((tag) => tag !== '' && tag);
@@ -37,31 +39,13 @@ const AddToolForm: React.FC<MyProps> = ({ onSubmited }) => {
 
       reset();
       onSubmited();
+      onSuccess(formatedData.title);
     } catch (err) {
-      inputErrorHandler(err.errors);
+      InputErrorHandler(err.errors, setHasFormError);
+      console.log(err);
     }
   };
 
-  const inputErrorHandler = (errors: string[]) => {
-    if (errors.includes('title is a required field')) {
-      setHasFormError((prevState) => ({ ...prevState, hasTitleError: true }));
-    }
-
-    if (errors.includes('link is a required field')) {
-      setHasFormError((prevState) => ({ ...prevState, haslinkError: true }));
-    }
-
-    if (errors.includes('description is a required field')) {
-      setHasFormError((prevState) => ({
-        ...prevState,
-        hasDescriptionError: true,
-      }));
-    }
-
-    if (errors.includes('tags is a required field')) {
-      setHasFormError((prevState) => ({ ...prevState, hasTagsError: true }));
-    }
-  };
   return (
     <Form ref={formRef} onSubmit={handleSubmit}>
       <Input
@@ -117,10 +101,3 @@ const AddToolForm: React.FC<MyProps> = ({ onSubmited }) => {
   );
 };
 export default AddToolForm;
-
-const schema = Yup.object().shape({
-  title: Yup.string().required().max(100),
-  link: Yup.string().required().max(300),
-  description: Yup.string().required().max(300),
-  tags: Yup.string().required().max(100),
-});
