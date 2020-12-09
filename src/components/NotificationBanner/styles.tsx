@@ -24,6 +24,7 @@ export const NotificatioBox = styled.dialog`
 
   p {
     flex: 1;
+    color: white;
   }
   transition: transform 0.7s;
 

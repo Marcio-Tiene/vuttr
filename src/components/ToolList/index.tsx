@@ -8,7 +8,7 @@ import api from '../../services/api';
 import DeleteToolModal from '../DeleteToolModal';
 import { loadingToolsReference } from '../../config/References';
 import NotificationBanner from '../NotificationBanner';
-import { CgClose } from 'react-icons/cg';
+import { HiCheckCircle } from 'react-icons/hi';
 
 const ToolList: React.FC = () => {
   const { LoadAllTools } = new ToolsRepository();
@@ -64,7 +64,7 @@ const ToolList: React.FC = () => {
       <NotificationBanner
         closeOnClick={() => setIsRemovedSucess(false)}
         isOpen={isRemovedSucess}
-        icon={<CgClose size={25} />}
+        icon={<HiCheckCircle color={'white'} size={25} />}
       >
         The <b>{toolToRemove.title}</b> tool was successfully removed
       </NotificationBanner>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AddFormArticle, AddFormHeader, ModalBackground } from './styles';
+import { HiCheckCircle } from 'react-icons/hi';
 
 import { HiOutlinePlus } from 'react-icons/hi';
 import { CgClose } from 'react-icons/cg';
@@ -44,7 +45,7 @@ const AddToolFormModal: React.FC<IAddToolFormModal> = ({ open, onClick }) => {
       <NotificationBanner
         closeOnClick={() => setIsAddSucces(false)}
         isOpen={isAddSucces}
-        icon={<CgClose size={25} />}
+        icon={<HiCheckCircle color='white' size={25} />}
       >
         The <b>{toolSuccessAdded}</b> tool was successfully added
       </NotificationBanner>
