@@ -10,6 +10,7 @@ import {
   ToolTag,
   ToolTitle,
 } from './styles';
+import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
 
 interface IToolCard extends ITools {
   removeButtonOnClick?: () => void;
@@ -23,6 +24,13 @@ const ToolCard: React.FC<IToolCard> = ({
   id,
   removeButtonOnClick,
 }) => {
+  const { setSearchText, setIsChecked } = ToolListGlobalState();
+
+  const tagOnClick = (tagName: string) => {
+    setIsChecked(true);
+    setSearchText(tagName);
+  };
+
   return (
     <ToolArticle key={id}>
       <ToolHeader>
@@ -37,7 +45,9 @@ const ToolCard: React.FC<IToolCard> = ({
       <ToolDescription>{description}</ToolDescription>
       <TagsContainer>
         {tags.map((tag, index) => (
-          <ToolTag key={index}>#{tag}</ToolTag>
+          <ToolTag onClick={() => tagOnClick(tag)} key={index}>
+            #{tag}
+          </ToolTag>
         ))}
       </TagsContainer>
     </ToolArticle>

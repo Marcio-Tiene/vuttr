@@ -19,9 +19,11 @@ export const ToolArticle = styled.article`
 `;
 export const ToolHeader = styled.header`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 0 2ch;
+  overflow-x: hidden;
 `;
 
 export const ToolTitle = styled.a`
@@ -41,8 +43,10 @@ export const ToolDescription = styled.p`
 export const TagsContainer = styled.div`
   padding: 0 2ch;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
 `;
 export const ToolTag = styled.h4`
   padding-right: 1ch;
+  cursor: pointer;
 `;
