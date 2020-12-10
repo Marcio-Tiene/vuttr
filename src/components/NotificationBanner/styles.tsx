@@ -39,4 +39,5 @@ export const CloseSpan = styled.span`
   display: flex;
   align-items: center;
   justify-self: flex-end;
+  cursor: pointer;
 `;
