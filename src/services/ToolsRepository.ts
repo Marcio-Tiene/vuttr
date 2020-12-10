@@ -31,6 +31,12 @@ export default class ToolsRepository {
   }
 
   async PostTool(data: {}) {
-    await api.post('/tools', data).then((response) => console.log(response));
+    await api
+      .post('/tools', data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => console.log(response));
   }
 }
