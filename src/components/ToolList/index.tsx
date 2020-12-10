@@ -17,7 +17,7 @@ const ToolList: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isRemovedSucess, setIsRemovedSucess] = useState(false);
 
-  const { toolList, setToolList, setSearchText } = ToolListGlobalState();
+  const { toolList, setToolList } = ToolListGlobalState();
 
   const removeTool = async (tool: ITools) => {
     await api.delete(`/tools/${tool.id}`);

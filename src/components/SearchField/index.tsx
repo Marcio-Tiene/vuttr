@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
 import { ITools } from '../../interfaces/ITools';
