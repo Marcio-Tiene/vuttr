@@ -8,6 +8,22 @@ const Main = styled.main`
 
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--Ink);
+    border-radius: 5px;
+  }
 `;
 
 export default Main;
