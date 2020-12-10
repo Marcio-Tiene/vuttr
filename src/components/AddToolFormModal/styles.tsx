@@ -39,6 +39,7 @@ export const AddFormArticle = styled.article`
   height: 95vh;
   max-height: 700px;
   margin: 10% 0;
+  border-radius: 5px;
 
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 20px 25px #0000001a;

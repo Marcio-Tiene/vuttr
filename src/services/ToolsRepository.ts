@@ -31,10 +31,6 @@ export default class ToolsRepository {
   }
 
   async PostTool(data: {}) {
-    try {
-      await api.post('/tools', data).then((response) => console.log(response));
-    } catch {
-      return [toolsErrorReference];
-    }
+    await api.post('/tools', data).then((response) => console.log(response));
   }
 }

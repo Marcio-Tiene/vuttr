@@ -25,4 +25,29 @@ export const Button = styled.button`
   :active {
     background: #244aa8 0% 0% no-repeat padding-box;
   }
+
+  &.danger {
+    background: #f95e5a 0% 0% no-repeat padding-box;
+
+    :hover {
+      background: #cc4c4c 0% 0% no-repeat padding-box;
+    }
+
+    :active {
+      background: #a53f3f 0% 0% no-repeat padding-box;
+    }
+  }
+
+  &.secondary-neutral {
+    background: #e1e7fd 0% 0% no-repeat padding-box;
+    color: #365df0;
+
+    :hover {
+      background: #cad6fc 0% 0% no-repeat padding-box;
+    }
+
+    :active {
+      background: #b9c6fa 0% 0% no-repeat padding-box;
+    }
+  }
 `;

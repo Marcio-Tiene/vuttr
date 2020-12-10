@@ -8,21 +8,22 @@ export const ToolListContainer = styled.div`
   flex-direction: column;
   height: 100%;
   gap: 20px;
+  @media (min-width: 800px) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
 
-  overflow-y: scroll;
-  overflow-x: hidden;
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: none;
+    }
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: none;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--Ink);
-    border-radius: 5px;
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: var(--Ink);
+      border-radius: 5px;
+    }
   }
 `;
