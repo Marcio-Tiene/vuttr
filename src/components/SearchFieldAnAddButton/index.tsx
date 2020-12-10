@@ -14,7 +14,7 @@ const SearchFieldAnAddButton = () => {
   return (
     <SearchFieldAnAddButtonContainer>
       <SearchField />
-      <Button onClick={() => setIsOpen(!isOpen)}>
+      <Button onClick={() => setIsOpen(!isOpen)} style={{ marginRight: '8px' }}>
         <GoPlus />
         add
       </Button>

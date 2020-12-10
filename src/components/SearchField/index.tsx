@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
 import { ITools } from '../../interfaces/ITools';
@@ -8,15 +8,19 @@ import InputSubmitOnEnter from '../InputSubmitOnEnter';
 import { SearchContainer } from './styles';
 
 const SearchField: React.FC = () => {
-  const [searchText, setSearchText] = useState('');
-  const [isChecked, setIsChecked] = useState(false);
+  const {
+    setToolList,
+    searchText,
+    setSearchText,
+    isChecked,
+    setIsChecked,
+  } = ToolListGlobalState();
+
   const checkeBoxOnChange = () =>
     isChecked ? setIsChecked(false) : setIsChecked(true);
 
   const inputOnChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setSearchText(event.target.value);
-
-  const { setToolList } = ToolListGlobalState();
 
   const { SearchTools, SearchToolsbyTags } = new GetTools();
 
