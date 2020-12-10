@@ -34,8 +34,8 @@ const AddToolForm: React.FC<MyProps> = ({ onSubmited, onSuccess }) => {
 
       const formatedData = { ...data, tags: tagsWithoutEmptyStrings };
 
-      await PostTool(formatedData);
-      setToolList(await LoadAllTools());
+      PostTool(formatedData);
+      setToolList(LoadAllTools());
 
       reset();
       onSubmited();

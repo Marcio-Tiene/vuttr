@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITools } from '../../interfaces/ITools';
+import { IToolSLocalStorage } from '../../interfaces/ITools';
 import { CgClose } from 'react-icons/cg';
 import {
   RemoveButton,
@@ -12,7 +12,7 @@ import {
 } from './styles';
 import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
 
-interface IToolCard extends ITools {
+interface IToolCard extends IToolSLocalStorage {
   removeButtonOnClick?: () => void;
 }
 

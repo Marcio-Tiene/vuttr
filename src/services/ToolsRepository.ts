@@ -1,36 +1,66 @@
-import { toolsErrorReference } from '../config/References';
-import api from './api';
+import { LocalStorageTools } from '../config/References';
+import { IToolSLocalStorage } from '../interfaces/ITools';
+import { v4 as uuidv4 } from 'uuid';
 
 export default class ToolsRepository {
-  async LoadAllTools() {
-    try {
-      const response = (await api.get('/tools')).data;
-
-      return response;
-    } catch {
-      return [toolsErrorReference];
+  LoadAllTools = () => {
+    if (!localStorage.getItem('myTools')) {
+      localStorage.setItem('myTools', JSON.stringify([LocalStorageTools]));
     }
-  }
-  async SearchTools(query: string) {
-    try {
-      const response = (await api.get(`/tools?q=${query}`)).data;
 
-      return response;
-    } catch {
-      return [toolsErrorReference];
-    }
-  }
-  async SearchToolsbyTags(tag: string) {
-    try {
-      const response = (await api.get(`/tools?tags_like=${tag}`)).data;
+    return JSON.parse(
+      localStorage.getItem('myTools') as string
+    ) as IToolSLocalStorage[];
+  };
+  SearchToolsbyTags(tag: string) {
+    const toolList = JSON.parse(
+      localStorage.getItem('myTools') as string
+    ) as IToolSLocalStorage[];
+    const toolsFilteredByTags = toolList.filter((tool: IToolSLocalStorage) =>
+      tool.tags.includes(tag)
+    );
 
-      return response;
-    } catch {
-      return [toolsErrorReference];
-    }
+    return toolsFilteredByTags;
   }
 
-  async PostTool(data: {}) {
-    await api.post('/tools', data).then((response) => console.log(response));
+  SearchTools(query: string) {
+    const toolList = JSON.parse(
+      localStorage.getItem('myTools') as string
+    ) as IToolSLocalStorage[];
+    const toolsFilteredByTags = toolList.filter(
+      (tool: IToolSLocalStorage) =>
+        tool.title.includes(query) ||
+        tool.description.includes(query) ||
+        tool.tags.includes(query)
+    );
+    return toolsFilteredByTags;
+  }
+
+  PostTool(data: {}) {
+    const toolList = JSON.parse(
+      localStorage.getItem('myTools') as string
+    ) as IToolSLocalStorage[];
+    const newId = uuidv4();
+    const toolToPost = { ...data, id: newId };
+
+    toolList.unshift(toolToPost as IToolSLocalStorage);
+
+    const saveStringfyedTools = JSON.stringify(toolList);
+    localStorage.clear();
+
+    localStorage.setItem('myTools', saveStringfyedTools);
+  }
+
+  DeleteTool(id: string) {
+    const toolList = JSON.parse(
+      localStorage.getItem('myTools') as string
+    ) as IToolSLocalStorage[];
+    const indexToRemove = toolList.findIndex((tool) => tool.id === id);
+
+    toolList.splice(indexToRemove, 1);
+
+    localStorage.clear();
+    const deletedStringfyed = JSON.stringify(toolList);
+    localStorage.setItem('myTools', deletedStringfyed);
   }
 }

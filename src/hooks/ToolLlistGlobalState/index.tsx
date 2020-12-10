@@ -6,14 +6,14 @@ import {
   SetSearchText,
   SetIsChecked,
 } from '../../context/ToolListContext';
-import { IHasFormError, ITools } from '../../interfaces/ITools';
+import { IHasFormError, IToolSLocalStorage } from '../../interfaces/ITools';
 
 const ToolListGlobalState = () => {
   const { toolList, hasFormError, searchText, isChecked } = useContext(
     ToolListContext
   );
   const setToolList = useContext(SetToolListContext) as React.Dispatch<
-    React.SetStateAction<ITools[]>
+    React.SetStateAction<IToolSLocalStorage[]>
   >;
   const setHasFormError = useContext(SetHasFormErrorContext) as React.Dispatch<
     React.SetStateAction<IHasFormError>

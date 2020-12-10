@@ -12,3 +12,11 @@ export interface IHasFormError {
   hasDescriptionError: boolean;
   hasTagsError: boolean;
 }
+
+export interface IToolSLocalStorage {
+  id: string;
+  title: string;
+  link: string;
+  description: string;
+  tags: string[];
+}

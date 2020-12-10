@@ -1,18 +1,18 @@
 import React, { createContext, useState } from 'react';
 import {
   hasFormErrorInitialValue,
-  loadingToolsReference,
+  LocalStorageTools,
 } from '../../config/References';
-import { IHasFormError, ITools } from '../../interfaces/ITools';
+import { IHasFormError, IToolSLocalStorage } from '../../interfaces/ITools';
 
 const ToolListContext = createContext({
-  toolList: [loadingToolsReference],
+  toolList: [LocalStorageTools],
   hasFormError: hasFormErrorInitialValue,
   searchText: '',
   isChecked: false,
 });
 const SetToolListContext = createContext<null | React.Dispatch<
-  React.SetStateAction<ITools[]>
+  React.SetStateAction<IToolSLocalStorage[]>
 >>(null);
 const SetHasFormErrorContext = createContext<null | React.Dispatch<
   React.SetStateAction<IHasFormError>
@@ -28,9 +28,10 @@ const ToolListProvider: React.FC = ({ children }) => {
   const [hasFormError, setHasFormError] = useState<IHasFormError>(
     hasFormErrorInitialValue
   );
-  const [toolList, setToolList] = useState<ITools[]>([
-    { title: 'loading', tags: [''] },
-  ] as ITools[]);
+
+  const [toolList, setToolList] = useState<IToolSLocalStorage[]>([
+    LocalStorageTools,
+  ]);
 
   const [searchText, setSearchtext] = useState('');
 

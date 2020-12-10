@@ -1,7 +1,6 @@
 import React from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
-import { ITools } from '../../interfaces/ITools';
 import GetTools from '../../services/ToolsRepository';
 import CheckBox from '../CheckBox';
 import InputSubmitOnEnter from '../InputSubmitOnEnter';
@@ -24,17 +23,15 @@ const SearchField: React.FC = () => {
 
   const { SearchTools, SearchToolsbyTags } = new GetTools();
 
-  const onEnterPress = async (
-    event: React.KeyboardEvent<HTMLDivElement>
-  ): Promise<void> => {
+  const onEnterPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Enter') {
       event.preventDefault();
       event.stopPropagation();
       if (isChecked) {
-        const response = (await SearchToolsbyTags(searchText)) as ITools[];
+        const response = SearchToolsbyTags(searchText);
         setToolList(response);
       } else {
-        const response = (await SearchTools(searchText)) as ITools[];
+        const response = SearchTools(searchText);
         setToolList(response);
       }
     }

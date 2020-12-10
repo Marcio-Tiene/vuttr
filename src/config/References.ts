@@ -1,4 +1,8 @@
-import { IHasFormError, ITools } from '../interfaces/ITools';
+import {
+  IHasFormError,
+  ITools,
+  IToolSLocalStorage,
+} from '../interfaces/ITools';
 
 export const toolsErrorReference: ITools = {
   id: -1,
@@ -20,4 +24,13 @@ export const hasFormErrorInitialValue: IHasFormError = {
   haslinkError: false,
   hasDescriptionError: false,
   hasTagsError: false,
+};
+
+export const LocalStorageTools: IToolSLocalStorage = {
+  id: '32321321321321321321321',
+  title: 'VUTTR',
+  description:
+    'Very Useful Tools To Rememember: A tool to help you remember other useful tools',
+  link: 'to be done',
+  tags: ['tools', 'remember', 'useful'],
 };

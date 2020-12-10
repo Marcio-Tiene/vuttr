@@ -3,25 +3,25 @@ import ToolsRepository from '../../services/ToolsRepository';
 import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
 import ToolCard from '../ToolCard';
 import { ToolListContainer } from './styles';
-import { ITools } from '../../interfaces/ITools';
-import api from '../../services/api';
+import { IToolSLocalStorage } from '../../interfaces/ITools';
+
 import DeleteToolModal from '../DeleteToolModal';
-import { loadingToolsReference } from '../../config/References';
+import { LocalStorageTools } from '../../config/References';
 import NotificationBanner from '../NotificationBanner';
 import { HiCheckCircle } from 'react-icons/hi';
 
 const ToolList: React.FC = () => {
-  const { LoadAllTools } = new ToolsRepository();
+  const { LoadAllTools, DeleteTool } = new ToolsRepository();
 
-  const [toolToRemove, setToolToRemove] = useState(loadingToolsReference);
+  const [toolToRemove, setToolToRemove] = useState(LocalStorageTools);
   const [isOpen, setIsOpen] = useState(false);
   const [isRemovedSucess, setIsRemovedSucess] = useState(false);
 
   const { toolList, setToolList } = ToolListGlobalState();
 
-  const removeTool = async (tool: ITools) => {
-    await api.delete(`/tools/${tool.id}`);
-    setToolList(await LoadAllTools());
+  const removeTool = (tool: IToolSLocalStorage) => {
+    DeleteTool(tool.id);
+    setToolList(LoadAllTools());
     setIsOpen(false);
     successHandleer();
   };
@@ -31,11 +31,10 @@ const ToolList: React.FC = () => {
   }
 
   useEffect(() => {
-    (async () => {
-      const response = (await LoadAllTools()) as ITools[];
-      setToolList(response);
-    })();
-  }, [LoadAllTools, setToolList]);
+    const response = LoadAllTools();
+    setToolList(response);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
