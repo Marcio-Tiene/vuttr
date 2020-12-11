@@ -16,15 +16,15 @@ you can see th preview using localstorage on [vuttr-pi.vercel.app](https://vuttr
 
 2. The user must be able to add a new tool
 
-   ![mock-add-form]()
+   ![mock-add-form](https://github.com/Marcio-Tiene/vuttr/blob/feature/documentation/src/assets/doc-images/mock-add-form.png)
 
 3. The user must be able to remove a tool
 
-   ![mock-delete-warn]()
+   ![mock-delete-warn](https://github.com/Marcio-Tiene/vuttr/blob/feature/documentation/src/assets/doc-images/mock-delete-warn.png)
 
 4. The user must be able to search for tools dynamically (global or using only tags)
 
-   ![mock-tag-search]()
+   ![mock-tag-search](https://github.com/Marcio-Tiene/vuttr/blob/feature/documentation/src/assets/doc-images/mock-tag-search.png)
 
 ## Tools used:
 
