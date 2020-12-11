@@ -67,6 +67,7 @@ const AddToolForm: React.FC<MyProps> = ({ onSubmited, onSuccess }) => {
           setHasFormError({ ...hasFormError, haslinkError: false })
         }
         hasError={hasFormError.haslinkError}
+        placeholder='https://...'
       />
       <ErrorMsg hasError={hasFormError.haslinkError}>
         the tool needs a link
