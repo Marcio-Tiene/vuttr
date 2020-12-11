@@ -8,7 +8,7 @@ export const NotificatioBox = styled.dialog`
   width: 95%;
   max-width: 600px;
 
-  position: absolute;
+  position: fixed;
   border: none;
   top: 20px;
   left: 50%;

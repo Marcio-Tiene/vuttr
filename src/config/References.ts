@@ -3,6 +3,7 @@ import {
   ITools,
   IToolSLocalStorage,
 } from '../interfaces/ITools';
+import { v4 as uuidv4 } from 'uuid';
 
 export const toolsErrorReference: ITools = {
   id: -1,
@@ -27,10 +28,10 @@ export const hasFormErrorInitialValue: IHasFormError = {
 };
 
 export const LocalStorageTools: IToolSLocalStorage = {
-  id: '32321321321321321321321',
+  id: uuidv4(),
   title: 'VUTTR',
   description:
     'Very Useful Tools To Rememember: A tool to help you remember other useful tools',
-  link: 'to be done',
+  link: 'https://vuttr-pi.vercel.app/',
   tags: ['tools', 'remember', 'useful'],
 };
