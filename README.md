@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+# VUTTR
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Very Useful Tools To Remember
 
-## Available Scripts
+There are so many great SaaS products coming into the world created from amazing startups and it's easy to get lost. For this reason VUTTR was created, with it, you can organize these tools in a list with name, description, link and tags for future searches and use.
 
-In the project directory, you can run:
+## Project guidelines.
 
-### `yarn start`
+This project was developed for the [bossabox](https://bossabox.com/)'s technical frontend challenge.
+The goal was to make an application following the mock below (put images), using this [design system](https://xd.adobe.com/spec/6a82c840-1813-4b23-6919-2ac91409d104-1cb3/grid/).
+you can see th preview using localstorage on [vuttr-pi.vercel.app](https://vuttr-pi.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. The user must be able to see the list of all registered tools
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+   ![mock-index](./assets/doc-images/mock-index.png)
 
-### `yarn test`
+2. The user must be able to add a new tool
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ![mock-add-form]()
 
-### `yarn build`
+3. The user must be able to remove a tool
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ![mock-delete-warn]()
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. The user must be able to search for tools dynamically (global or using only tags)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ![mock-tag-search]()
 
-### `yarn eject`
+## Tools used:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Typescript](https://www.typescriptlang.org/): To improve productivity and avoid possible implementation errors during development.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [React.js](https://reactjs.org/): For better responsiveness and user experience.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [React icons](https://react-icons.github.io/react-icons/): For easy icons usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [Styled components](https://styled-components.com/): To create more dynamic components and styles;
 
-## Learn More
+- [Unform](https://unform.dev/): For easy forms
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [yup](https://github.com/jquense/yup): For form validation.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [axios](https://github.com/axios/axios): To simplify http requests.
+
+- [Eslint](https://eslint.org/): to help debug the code during development.
+
+## Project setup:
+
+You will need to have installed node v15.3.0 or higher
+
+To run this project in a local environment, follow these steps:
+
+1. Go to this [repository](https://gitlab.com/bossabox/challenge-fake-api/tree/master) follow the instructions to clone and start the api.
+
+2. Clone the VUTTR repository.
+
+3. In the folder of the cloned project type on terminal the command below to install the dependencies
+
+```bash
+  $ yarn
+```
+
+or
+
+```bash
+$ npm i
+```
+
+4. Still in the project folder, type on terminal the command below to start the project in the browser.
+
+```sh
+  $ yarn start
+```
+
+or
+
+```bash
+$ npm start
+```
+
+### You can now use and modify the project at your discretion.
