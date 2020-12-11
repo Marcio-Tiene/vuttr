@@ -56,25 +56,25 @@ To run this project in a local environment, follow these steps:
 
 3. In the folder of the cloned project type on terminal the command below to install the dependencies
 
-```zsh
+```console
 $ yarn
 ```
 
 or
 
-```zsh
+```console
 $ npm i
 ```
 
 4. Still in the project folder, type on terminal the command below to start the project in the browser.
 
-```zsh
+```console
   $ yarn start
 ```
 
 or
 
-```zsh
+```console
 $ npm start
 ```
 
