@@ -29,15 +29,18 @@ export const ToolHeader = styled.header`
 export const ToolTitle = styled.a`
   display: flex;
   flex-wrap: wrap;
+
   text-decoration: underline solid var(--Ink);
 `;
 export const RemoveButton = styled.a`
   display: flex;
   align-self: flex-start;
   align-items: center;
+  height: 45px;
   cursor: pointer;
   h4 {
     padding-left: 0.2ch;
+    padding-bottom: 2px;
   }
 `;
 export const ToolDescription = styled.p`
