@@ -5,9 +5,10 @@ export const LogoImg = styled.img`
 
   transform: translateX(-7.5px);
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     width: 200px;
     transform: translateX(-18px);
+    margin-top: 10vh;
   }
 `;
 

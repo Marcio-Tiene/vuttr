@@ -24,6 +24,11 @@ const Main = styled.main`
     background: var(--Ink);
     border-radius: 5px;
   }
+
+  @media (max-width: 800px) {
+    height: 100vh;
+    margin-top: 0;
+  }
 `;
 
 export default Main;
