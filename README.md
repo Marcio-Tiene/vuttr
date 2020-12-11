@@ -12,7 +12,7 @@ you can see th preview using localstorage on [vuttr-pi.vercel.app](https://vuttr
 
 1. The user must be able to see the list of all registered tools
 
-   ![mock-index](./assets/doc-images/mock-index.png)
+   ![mock-index]('./assets/doc-images/mock-index.png')
 
 2. The user must be able to add a new tool
 
