@@ -66,6 +66,7 @@ const AddToolForm: React.FC<MyProps> = ({ onSubmited, onSuccess }) => {
         onClick={() =>
           setHasFormError({ ...hasFormError, haslinkError: false })
         }
+        placeholder='https://...'
         hasError={hasFormError.haslinkError}
       />
       <ErrorMsg hasError={hasFormError.haslinkError}>
