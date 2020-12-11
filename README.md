@@ -7,7 +7,7 @@ There are so many great SaaS products coming into the world created from amazing
 ## Project guidelines.
 
 This project was developed for the [bossabox](https://bossabox.com/)'s technical frontend challenge.
-The goal was to make an application following the mock below (put images), using this [design system](https://xd.adobe.com/spec/6a82c840-1813-4b23-6919-2ac91409d104-1cb3/grid/).
+The goal was to make an application following the mock below, using this [design system](https://xd.adobe.com/spec/6a82c840-1813-4b23-6919-2ac91409d104-1cb3/grid/).
 you can see th preview using localstorage on [vuttr-pi.vercel.app](https://vuttr-pi.vercel.app/)
 
 1. The user must be able to see the list of all registered tools
