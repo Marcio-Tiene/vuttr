@@ -19,7 +19,7 @@ export const ToolArticle = styled.article`
 `;
 export const ToolHeader = styled.header`
   display: flex;
-  flex-wrap: wrap;
+
   align-items: center;
   justify-content: space-between;
   padding: 0 2ch;
@@ -27,10 +27,12 @@ export const ToolHeader = styled.header`
 `;
 
 export const ToolTitle = styled.a`
+  flex-wrap: wrap;
   text-decoration: underline solid var(--Ink);
 `;
 export const RemoveButton = styled.a`
   display: flex;
+  align-self: flex-start;
   align-items: center;
   cursor: pointer;
   h4 {
