@@ -7,6 +7,7 @@ import ToolsRepository from '../../services/ToolsRepository';
 import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
 import InputErrorHandler from '../../services/InputErrorHandler';
 import validationFormSchema from '../../services/validationFormSchema';
+import TagsNormalization from '../../services/TagNormalization';
 
 interface FormData {
   title: string;
@@ -28,17 +29,8 @@ const AddToolForm: React.FC<MyProps> = ({ onSubmited, onSuccess }) => {
   const handleSubmit: SubmitHandler<FormData> = async (data, { reset }) => {
     try {
       await validationFormSchema.validate(data, { abortEarly: false });
-      const tagsWithoutEmptyStrings = data.tags
-        .split(' ')
-        .filter((tag) => tag !== '' && tag);
 
-      const tagsToLowerCase = tagsWithoutEmptyStrings.map((tag) =>
-        tag.toLowerCase()
-      );
-
-      const formatedTags = tagsToLowerCase.filter(
-        (elem, index, self) => index === self.indexOf(elem)
-      );
+      const formatedTags = TagsNormalization(data.tags);
 
       const formatedData = { ...data, tags: formatedTags };
 
