@@ -8,8 +8,11 @@ const Main = styled.main`
 
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--Ink) transparent;
   ::-webkit-scrollbar {
     width: 5px;
   }

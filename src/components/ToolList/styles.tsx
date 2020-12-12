@@ -8,8 +8,11 @@ export const ToolListContainer = styled.div`
   flex-direction: column;
   height: 100%;
   gap: 20px;
+
   @media (min-width: 800px) {
-    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--Ink) transparent;
+    overflow-y: auto;
     overflow-x: hidden;
     ::-webkit-scrollbar {
       width: 5px;
