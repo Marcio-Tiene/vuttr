@@ -32,7 +32,15 @@ const AddToolForm: React.FC<MyProps> = ({ onSubmited, onSuccess }) => {
         .split(' ')
         .filter((tag) => tag !== '' && tag);
 
-      const formatedData = { ...data, tags: tagsWithoutEmptyStrings };
+      const tagsToLowerCase = tagsWithoutEmptyStrings.map((tag) =>
+        tag.toLowerCase()
+      );
+
+      const formatedTags = tagsToLowerCase.filter(
+        (elem, index, self) => index === self.indexOf(elem)
+      );
+
+      const formatedData = { ...data, tags: formatedTags };
 
       PostTool(formatedData);
       setToolList(LoadAllTools());
