@@ -4,8 +4,8 @@ export const SwitchContainer = styled.div`
   .switch {
     position: relative;
     display: inline-block;
-    width: 46px;
-    height: 20px;
+    width: 65px;
+    height: 35px;
   }
 
   .switch input {
@@ -21,7 +21,7 @@ export const SwitchContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #ebeaed;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -29,27 +29,27 @@ export const SwitchContainer = styled.div`
   .slider:before {
     position: absolute;
     content: '';
-    height: 16px;
-    width: 16px;
-    left: 2px;
-    bottom: 2px;
+    height: 30px;
+    width: 30px;
+    left: 3px;
+    bottom: 2.5px;
     background-color: white;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
 
   input:checked + .slider {
-    background-color: #365df0;
+    background-color: #12db89;
   }
 
   input:focus + .slider {
-    box-shadow: 0 0 1px #365df0;
+    box-shadow: 0 0 1px #12db89;
   }
 
   input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
   }
 
   /* Rounded sliders */
