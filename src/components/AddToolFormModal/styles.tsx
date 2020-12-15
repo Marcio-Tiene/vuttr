@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components';
+import { ITheme } from '../../interfaces/ITheme';
 
 interface IModal {
   show?: boolean;
+  DarkMode?: boolean;
 }
 
 export const ModalBackground = styled.dialog`
@@ -23,10 +25,22 @@ export const ModalBackground = styled.dialog`
     css`
       display: grid;
       opacity: 1;
-    `};
+    `}
+  ${(p: IModal) =>
+    p.DarkMode
+      ? css`
+          filter: invert(1) hue-rotate(180deg);
+        `
+      : css``}
 `;
 
 export const AddFormArticle = styled.article`
+  ${(p: IModal) =>
+    p.DarkMode
+      ? css`
+          filter: invert(1) hue-rotate(180deg);
+        `
+      : css``}
   display: none;
   ${(p: IModal) =>
     !p.show &&

@@ -3,10 +3,16 @@ import { Button } from '../Button';
 
 interface IModal {
   show?: boolean;
+  DarkMode?: boolean;
 }
 
 export const DeleteToolArticle = styled.article`
   display: flex;
+  ${(p: IModal) =>
+    !p.DarkMode &&
+    css`
+      filter: invert(1) hue-rotate(180deg);
+    `};
   ${(p: IModal) =>
     !p.show &&
     css`

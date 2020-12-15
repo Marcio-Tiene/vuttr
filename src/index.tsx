@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Globalstyle from './GlobalStyle';
+
 import { ToolListProvider } from './context/ToolListContext';
+import { ThemeContextProvider } from './context/ThemeContext';
 
 ReactDOM.render(
-  <ToolListProvider>
-    <React.StrictMode>
-      <App />
-      <Globalstyle />
-    </React.StrictMode>
-  </ToolListProvider>,
+  <ThemeContextProvider>
+    <ToolListProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ToolListProvider>
+  </ThemeContextProvider>,
 
   document.getElementById('root')
 );

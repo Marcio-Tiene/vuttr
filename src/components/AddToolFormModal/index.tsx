@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { AddFormArticle, AddFormHeader, ModalBackground } from './styles';
 import { HiCheckCircle } from 'react-icons/hi';
 
@@ -6,6 +6,7 @@ import { HiOutlinePlus } from 'react-icons/hi';
 import { CgClose } from 'react-icons/cg';
 import AddToolForm from '../AddToolForm';
 import NotificationBanner from '../NotificationBanner';
+import { ThemeContext } from '../../context/ThemeContext';
 
 interface IAddToolFormModal {
   open?: boolean;
@@ -16,6 +17,8 @@ const AddToolFormModal: React.FC<IAddToolFormModal> = ({ open, onClick }) => {
   const [isAddSucces, setIsAddSucces] = useState(false);
   const [toolSuccessAdded, setToolSuccessAdded] = useState('');
 
+  const { DarkMode } = useContext(ThemeContext);
+
   function successHandleer(toolName: string) {
     setToolSuccessAdded(toolName);
     setIsAddSucces(true);
@@ -24,8 +27,8 @@ const AddToolFormModal: React.FC<IAddToolFormModal> = ({ open, onClick }) => {
 
   return (
     <>
-      <ModalBackground open={open} show={open}>
-        <AddFormArticle>
+      <ModalBackground open={open} show={open} DarkMode={DarkMode}>
+        <AddFormArticle DarkMode={DarkMode}>
           <AddFormHeader>
             <h2>
               <span>

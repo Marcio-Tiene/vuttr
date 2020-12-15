@@ -11,7 +11,7 @@ const Main = styled.main`
   scrollbar-width: thin;
   scrollbar-color: var(--Ink) transparent;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: none;
   ::-webkit-scrollbar {
     width: 5px;
   }

@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
+import { ITheme } from './interfaces/ITheme';
 
 const Globalstyle = createGlobalStyle`
 
@@ -18,7 +19,12 @@ html {
 --MostDarkestWhite: #DEDCE1;
   
   font-family: 'Source Sans Pro', sans-serif;  
-  filter: invert(1) hue-rotate(180deg);
+  ${(p: ITheme) =>
+    p.DarkMode
+      ? css`
+          filter: invert(1) hue-rotate(180deg);
+        `
+      : css``}
 }
 
 body{
@@ -68,6 +74,8 @@ p {
   padding: 0;
   box-sizing: border-box;
 }
+
+
 `;
 
 export default Globalstyle;
