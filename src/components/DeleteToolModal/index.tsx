@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { CgClose } from 'react-icons/cg';
 import { ModalBackground } from '../AddToolFormModal/styles';
 import {
@@ -7,7 +7,6 @@ import {
   DeleteToolArticle,
   DeleteToolButton,
 } from './styles';
-import { ThemeContext } from '../../context/ThemeContext';
 
 interface IRemoveTool {
   onConfirm?: () => void;
@@ -23,10 +22,9 @@ const DeleteToolModal: React.FC<IRemoveTool> = ({
   isOpen,
   toolName,
 }) => {
-  const { DarkMode } = useContext(ThemeContext);
   return (
-    <ModalBackground open={isOpen} show={isOpen} DarkMode={DarkMode}>
-      <DeleteToolArticle>
+    <ModalBackground open={isOpen} show={isOpen}>
+      <DeleteToolArticle className='animate'>
         <DeleteTollHeader>
           <CgClose size={25} />
           <h3>Remove Tool</h3>

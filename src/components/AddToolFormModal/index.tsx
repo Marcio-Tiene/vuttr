@@ -28,7 +28,7 @@ const AddToolFormModal: React.FC<IAddToolFormModal> = ({ open, onClick }) => {
   return (
     <>
       <ModalBackground open={open} show={open} DarkMode={DarkMode}>
-        <AddFormArticle DarkMode={DarkMode}>
+        <AddFormArticle className='animate' DarkMode={DarkMode}>
           <AddFormHeader>
             <h2>
               <span>
