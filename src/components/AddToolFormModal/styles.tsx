@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { ITheme } from '../../interfaces/ITheme';
 
 interface IModal {
   show?: boolean;
