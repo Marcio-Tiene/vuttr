@@ -42,10 +42,6 @@ export const SwitchContainer = styled.div`
     background-color: #12db89;
   }
 
-  input:focus + .slider {
-    box-shadow: 0 0 1px #12db89;
-  }
-
   input:checked + .slider:before {
     -webkit-transform: translateX(30px);
     -ms-transform: translateX(30px);
