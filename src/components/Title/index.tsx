@@ -1,12 +1,16 @@
 import React from 'react';
 import Header from '../Header';
-import { LogoImg, Subtitle } from './styles';
-import Logo from '../../assets/img/logo.svg';
+import { LogoContainer, LogoH1, LogoImg, Subtitle } from './styles';
+import Logo from '../../assets/img/light-bulb.svg';
 
 const Title: React.FC = () => {
   return (
     <Header>
-      <LogoImg src={Logo} alt='' />
+      <LogoContainer>
+        <LogoImg src={Logo} alt='' />
+        <LogoH1> VUTTR</LogoH1>
+      </LogoContainer>
+
       <Subtitle>Very Useful Tools To Remember</Subtitle>
     </Header>
   );

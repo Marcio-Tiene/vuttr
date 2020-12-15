@@ -11,12 +11,14 @@ const Globalstyle = createGlobalStyle`
 }
 html {
 
+
 --DarkestWhite: #EBEAED;
 --DarkerWhite: #F5F4F6;
 --Ink: #170C3A;
 --MostDarkestWhite: #DEDCE1;
   
   font-family: 'Source Sans Pro', sans-serif;  
+  filter: invert(1) hue-rotate(180deg);
 }
 
 body{
