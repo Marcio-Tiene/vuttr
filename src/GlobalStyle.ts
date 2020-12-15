@@ -3,31 +3,41 @@ import { ITheme } from './interfaces/ITheme';
 
 const Globalstyle = createGlobalStyle`
 
+#root{
+  
+}
+
 
 *{
     
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 html {
 
-
+  
 --DarkestWhite: #EBEAED;
 --DarkerWhite: #F5F4F6;
 --Ink: #170C3A;
 --MostDarkestWhite: #DEDCE1;
+
+background-color:white;
   
   font-family: 'Source Sans Pro', sans-serif;  
   ${(p: ITheme) =>
-    p.DarkMode
-      ? css`
-          filter: invert(1) hue-rotate(180deg);
-        `
-      : css``}
+    p.DarkMode &&
+    css`
+      filter: invert(1) hue-rotate(180deg);
+    `}
+
+ 
 }
 
 body{
+  
+  
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -36,6 +46,7 @@ align-items: center;
 justify-content: center;
   
   background-color: white;
+  
 }
 
 h1, h2, h3, h4, h5, h6{
