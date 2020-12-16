@@ -11,6 +11,7 @@ import {
   ToolTitle,
 } from './styles';
 import ToolListGlobalState from '../../hooks/ToolLlistGlobalState';
+import ToolsRepository from '../../services/ToolsRepository';
 
 interface IToolCard extends ITools {
   removeButtonOnClick?: () => void;
@@ -24,11 +25,14 @@ const ToolCard: React.FC<IToolCard> = ({
   id,
   removeButtonOnClick,
 }) => {
-  const { setSearchText, setIsChecked } = ToolListGlobalState();
+  const { setSearchText, setIsChecked, setToolList } = ToolListGlobalState();
+  const { SearchToolsbyTags } = new ToolsRepository();
 
-  const tagOnClick = (tagName: string) => {
+  const tagOnClick = async (tagName: string) => {
     setIsChecked(true);
     setSearchText(tagName);
+    const response = await SearchToolsbyTags(tagName);
+    setToolList(response);
   };
 
   return (
