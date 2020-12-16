@@ -25,7 +25,7 @@ const AddToolFormModal: React.FC<IAddToolFormModal> = ({ open, onClick }) => {
   return (
     <>
       <ModalBackground open={open} show={open}>
-        <AddFormArticle>
+        <AddFormArticle className='animate'>
           <AddFormHeader>
             <h2>
               <span>

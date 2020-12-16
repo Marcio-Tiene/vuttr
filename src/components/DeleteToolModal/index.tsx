@@ -24,7 +24,7 @@ const DeleteToolModal: React.FC<IRemoveTool> = ({
 }) => {
   return (
     <ModalBackground open={isOpen} show={isOpen}>
-      <DeleteToolArticle>
+      <DeleteToolArticle className='animate'>
         <DeleteTollHeader>
           <CgClose size={25} />
           <h3>Remove Tool</h3>
