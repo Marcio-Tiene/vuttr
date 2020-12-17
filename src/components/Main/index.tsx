@@ -8,23 +8,12 @@ const Main = styled.main`
 
   display: flex;
   flex-direction: column;
-  scrollbar-width: thin;
-  scrollbar-color: var(--Ink) transparent;
+  scrollbar-width: none;
+
   overflow-y: auto;
   overflow-x: none;
   ::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: none;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--Ink);
-    border-radius: 5px;
+    width: 0px;
   }
 
   @media (max-width: 800px) {
