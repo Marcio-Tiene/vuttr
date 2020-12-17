@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext({
   DarkMode: false,
@@ -9,7 +9,15 @@ const SetDarkMode = createContext<null | React.Dispatch<
 >>(null);
 
 const ThemeContextProvider: React.FC = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const theme: boolean = localStorage.getItem('theme')
+    ? JSON.parse(localStorage.getItem('theme') as string)
+    : false;
+
+  const [isDarkMode, setIsDarkMode] = useState(theme);
+
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(isDarkMode));
+  }, [isDarkMode]);
 
   return (
     <ThemeContext.Provider value={{ DarkMode: isDarkMode }}>
